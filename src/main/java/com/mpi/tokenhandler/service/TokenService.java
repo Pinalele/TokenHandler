@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class TokenService {
@@ -38,5 +40,11 @@ public class TokenService {
         }
 
         return token.toString();
+    }
+
+    public List<Token> getAllTokens(){
+        List<Token> allTokens = new ArrayList<>();
+        tokenRepository.findAll().forEach(allTokens::add);
+        return  allTokens;
     }
 }

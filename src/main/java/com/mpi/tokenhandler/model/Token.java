@@ -1,26 +1,31 @@
 package com.mpi.tokenhandler.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Token {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column
     private Long id;
+    @Column
     private String token;
+    @Column
     private LocalDate createTime;
-    private String user;
+    @Column
+    private String userLogin;
 
     public Token(String token, LocalDate createTime, String user) {
         this.token = token;
         this.createTime = createTime;
-        this.user = user;
+        this.userLogin = user;
     }
 }
