@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -19,11 +20,11 @@ public class Token {
     @Column
     private String token;
     @Column
-    private LocalDate createTime;
+    private LocalDateTime createTime;
     @Column
     private String userLogin;
 
-    public Token(String token, LocalDate createTime, String user) {
+    public Token(String token, LocalDateTime createTime, String user) {
         this.token = token;
         this.createTime = createTime;
         this.userLogin = user;

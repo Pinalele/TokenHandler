@@ -6,8 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
-import java.time.LocalDate;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -27,7 +26,7 @@ public class TokenService {
     }
 
     public Token storeToken() {
-        Token newToken = new Token(generateToken(), LocalDate.now(), "Dummy");
+        Token newToken = new Token(generateToken(), LocalDateTime.now(), "Dummy");
         return tokenRepository.save(newToken);
     }
 
