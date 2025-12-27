@@ -43,8 +43,6 @@ public class TokenService {
     }
 
     public List<Token> getAllTokens(){
-        List<Token> allTokens = new ArrayList<>();
-        tokenRepository.findAll().forEach(allTokens::add);
-        return  allTokens;
+        return tokenRepository.findAll();
     }
 }
